@@ -1,0 +1,16 @@
+.backdrop {
+  overflow: hidden;
+}
+
+.overlay {
+  opacity: 0;
+  transition: opacity 500ms ease-in-out;
+}
+
+.overlayAfter {
+  opacity: 1;
+}
+
+.overlayBefore {
+  opacity: 0;
+}

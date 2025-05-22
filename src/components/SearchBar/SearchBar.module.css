@@ -1,0 +1,50 @@
+.header {
+  display: flex;
+  form {
+    margin: 0 auto;
+    margin-bottom: 40px;
+    input {
+      border-radius: 6px;
+      width: 272px;
+      height: 40px;
+      padding: 8px 16px;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 1.5;
+      letter-spacing: 0.04em;
+      color: #212531;
+      margin-right: 20px;
+      outline: none;
+      transition: border-color 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+        box-shadow 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+      &:hover {
+        border: 2px solid #b7a2c9;
+        box-shadow: #b7a2c9 0px 3px 12px;
+      }
+      &:focus {
+        border: 2px solid #b7a2c9;
+      }
+    }
+    button {
+      font-family: inherit;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 1.5;
+      letter-spacing: 0.04em;
+      color: #212531;
+      background-color: #b7a2c9;
+      border: none;
+      border-radius: 8px;
+      padding: 8px 16px;
+      cursor: pointer;
+      transition: box-shadow 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+        transform 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+        color 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+      &:hover {
+        transform: scale(1.025);
+        color: #ffffff;
+        box-shadow: #b7a2c9 0px 3px 12px;
+      }
+    }
+  }
+}
