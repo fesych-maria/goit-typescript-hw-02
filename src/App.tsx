@@ -8,16 +8,17 @@ import Loader from "./components/Loader/Loader";
 import ErrorMessage from "./components/ErrorMessage/ErrorMessage";
 import LoadMoreBtn from "./components/LoadMoreBtn/LoadMoreBtn";
 import ImageModal from "./components/ImageModal/ImageModal";
+import { Image, Photo } from "./types";
 
 function App() {
-  const [images, setImages] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState(false);
-  const [query, setQuery] = useState("");
-  const [page, setPage] = useState(1);
-  const [totalPages, setTotalPages] = useState(0);
-  const [isOpen, setIsOpen] = useState(false);
-  const [urlObj, setUrlObj] = useState({});
+  const [images, setImages] = useState<Photo[]>([]);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [error, setError] = useState<boolean>(false);
+  const [query, setQuery] = useState<string>("");
+  const [page, setPage] = useState<number>(1);
+  const [totalPages, setTotalPages] = useState<number>(0);
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [urlObj, setUrlObj] = useState<Image>({ url: "", alt: "" });
 
   useEffect(() => {
     if (!query) return;
@@ -37,22 +38,22 @@ function App() {
     getData();
   }, [query, page]);
 
-  const handleSubmit = (newQuery) => {
+  const handleSubmit = (newQuery: string): void => {
     setQuery(newQuery);
     setImages([]);
     setPage(1);
   };
 
-  const handleClick = () => {
+  const handleClick = (): void => {
     setPage(page + 1);
   };
 
-  function openModal(urlObj) {
+  function openModal(urlObj: Image): void {
     setIsOpen(true);
     setUrlObj(urlObj);
   }
 
-  function closeModal() {
+  function closeModal(): void {
     setIsOpen(false);
   }
 

@@ -1,6 +1,14 @@
+import React from "react";
 import css from "./ImageCard.module.css";
+import { Urls } from "../../types";
 
-const ImageCard = ({ alt, urls, openModal }) => {
+interface ImageCardProps {
+  alt: string;
+  urls: Urls;
+  openModal: (urlObj: Image) => void;
+}
+
+const ImageCard: React.FC<ImageCardProps> = ({ alt, urls, openModal }) => {
   return (
     <div className={css.container}>
       <img

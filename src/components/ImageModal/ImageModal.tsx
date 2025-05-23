@@ -1,8 +1,10 @@
 import Modal from "react-modal";
 import css from "./ImageModal.module.css";
+import React from "react";
+import { Image } from "../../types";
 Modal.setAppElement("#root");
 
-const modalStyles = {
+const modalStyles: Modal.Styles = {
   overlay: {
     position: "fixed",
     backgroundColor: "rgba(50, 47, 66, 0.9)",
@@ -20,7 +22,18 @@ const modalStyles = {
     padding: "0px",
   },
 };
-const ImageModal = ({ modalIsOpen, closeModal, urlObj }) => {
+
+interface ImageModalProps {
+  modalIsOpen: boolean;
+  closeModal: () => void;
+  urlObj: Image;
+}
+
+const ImageModal: React.FC<ImageModalProps> = ({
+  modalIsOpen,
+  closeModal,
+  urlObj,
+}) => {
   return (
     <Modal
       style={modalStyles}
