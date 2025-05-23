@@ -1,6 +1,6 @@
 import React from "react";
 import css from "./ImageCard.module.css";
-import { Urls } from "../../types";
+import { Image, Urls } from "../../types";
 
 interface ImageCardProps {
   alt: string;
